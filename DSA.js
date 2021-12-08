@@ -70,23 +70,53 @@
 
 
 //find the max sum of every other number in array
-const houseRobber = (nums) => {
-    let table = Array(nums.length).fill(0)
+// const houseRobber = (nums) => {
+//     let table = Array(nums.length).fill(0)
 
-    for(let i = 0; i < nums.length; i++){
-        if(i === 0){
-            table[i] = nums[i];
-            continue;
-        }
-        if(i === 1){
-            table[i] = Math.max(nums[i], nums[i-1])
-            continue;
-        }
-        table[i] = Math.max(nums[i] + table[i-2], table[i-1])
+//     for(let i = 0; i < nums.length; i++){
+//         if(i === 0){
+//             table[i] = nums[i];
+//             continue;
+//         }
+//         if(i === 1){
+//             table[i] = Math.max(nums[i], nums[i-1])
+//             continue;
+//         }
+//         table[i] = Math.max(nums[i] + table[i-2], table[i-1])
+//     }
+//     return table.pop()
+// };
+
+
+
+// function binarySearch (low, high, int) {
+//     console.log(low, high)
+//     if(low === int || high === int) return true;
+
+//     let mid = Math.floor((high-low) / 2 + low)
+//     if(mid < int){
+//         low = mid;
+//         binarySearch(low, high, int)
+//     } else if (mid > int) {
+//         high = mid;
+//         binarySearch(low, high, int)
+//     } else {
+//         return false;
+//     }
+// }
+function binarySearchArray(array, target) {
+    var mid = Math.floor(array.length/2);
+    console.log(array[mid])
+    if(array[mid] === target) {
+        return true;
     }
-    return table.pop()
-};
-
-
-console.log(houseRobber([2,1,3,1,3,1]))
+    if(array[mid] > target){
+        binarySearchArray(array.slice(0, mid))
+    }
+    if (array[mid] < target){
+        binarySearchArray(array.slice(mid))
+    }
+    return false;
+}
+console.log(binarySearchArray([3, 12, 14, 15, 20, 22, 30], 12))
                             // table =   [1,2,5,5,6,6]
