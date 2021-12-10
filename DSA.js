@@ -86,6 +86,7 @@
 //     }
 //     return table.pop()
 // };
+// table =   [1,2,5,5,6,6]
 
 
 
@@ -104,19 +105,47 @@
 //         return false;
 //     }
 // }
-function binarySearchArray(array, target) {
-    var mid = Math.floor(array.length/2);
-    console.log(array[mid])
-    if(array[mid] === target) {
-        return true;
+// function binarySearchArray(array, target) {
+//     var mid = Math.floor(array.length/2);
+//     console.log(array[mid])
+//     if(array[mid] == target) return true;
+//     if(array[mid] > target){
+//         binarySearchArray(array.slice(0, mid), target)
+//     }
+//     if (array[mid] < target){
+//         binarySearchArray(array.slice(mid), target)
+//     }
+//     return false;
+// }
+
+// function getDivisorsCnt(n){
+//     let counter = 0;
+//     if(n === 0) return 0;
+//     if(n === 1) return 1;
+//     for(let i = 0; i <= n; i++){
+
+//         if(n % i === 0){
+//             console.log(i)
+//           counter+=1
+//         }
+//       }
+//     return counter;
+//   }
+const quickSort = (array) => {
+if(array.length <= 1) return array;
+let pivot = array[0];
+let left = []
+let right= []
+for(let i = 1; i < array.length; i++){
+    let currentNum = array[i];
+    if(pivot >= currentNum){
+        left.push(currentNum)
     }
-    if(array[mid] > target){
-        binarySearchArray(array.slice(0, mid))
+    if(pivot <= currentNum){
+        right.push(currentNum)
     }
-    if (array[mid] < target){
-        binarySearchArray(array.slice(mid))
-    }
-    return false;
 }
-console.log(binarySearchArray([3, 12, 14, 15, 20, 22, 30], 12))
-                            // table =   [1,2,5,5,6,6]
+return quickSort(left).concat(pivot, quickSort(right))
+}
+
+console.log(quickSort([10, 3, 5, 33, 11, 9, 24, 55, 7]))
