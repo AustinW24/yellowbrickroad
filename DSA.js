@@ -131,21 +131,21 @@
 //       }
 //     return counter;
 //   }
-const quickSort = (array) => {
-if(array.length <= 1) return array;
-let pivot = array[0];
-let left = []
-let right= []
-for(let i = 1; i < array.length; i++){
-    let currentNum = array[i];
-    if(pivot >= currentNum){
-        left.push(currentNum)
-    }
-    if(pivot <= currentNum){
-        right.push(currentNum)
-    }
-}
-return quickSort(left).concat(pivot, quickSort(right))
-}
+// const quickSort = (array) => {
+// if(array.length <= 1) return array;
+// let pivot = array[0];
+// let left = []
+// let right= []
+// for(let i = 1; i < array.length; i++){
+//     let currentNum = array[i];
+//     if(pivot >= currentNum){
+//         left.push(currentNum)
+//     }
+//     if(pivot <= currentNum){
+//         right.push(currentNum)
+//     }
+// }
+// return quickSort(left).concat(pivot, quickSort(right))
+// }
 
 console.log(quickSort([10, 3, 5, 33, 11, 9, 24, 55, 7]))
