@@ -148,7 +148,7 @@
 // return quickSort(left).concat(pivot, quickSort(right))
 // }
 
-// let array = ["proclamation", "product", "problem"]
+let array = ["proclamation", "product", "problem"]
 // const longestPreFix = (array) =>{
 //     if(!array <= 1){
 //         return array;
@@ -157,36 +157,19 @@
 //         console.log("true");
 //     }
 //     return false;
-// let longestPreFix = "";
-// let longestWord = "";
+    // let longestPreFix = "";
+    // let longestWord = "";
 
 
-// for(let i = 0; i < array.length; i++){
-//     let curr = array[i];
-//     longestWord += curr;
-// }
-// return longestWord
+    // for(let i = 0; i < array.length; i++){
+    //     let curr = array[i];
+    //     longestWord += curr;
+    // }
+    // return longestWord
 // };
 
 // s = "foobar", t = "barfoot", return 't'
 // s = "ide", t = "idea", return 'a'
 // s = "coding", t "ingcod", return ''
 
-// function addedLetters(s, t) {
-//     let copy = t;
-//     if (s.length === t.length) return " ";
-//     //iterate through s, if t.includes(s[i]), replace that letter in t with nothing
-//     //return t
-//     for(let i = 0; i < s.length; i++){
-//         if(copy.includes(s[i])){
-//             copy.replace(s[i], "")
-//         }
-//     }
-//     return copy;
-// }
-
-// let func = () => {
-//     let s = "foobar";
-//     let t = "barefoot";
-//     return addedLetters(s, t)
-// }
+function addedLetters()
