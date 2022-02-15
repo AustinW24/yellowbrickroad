@@ -233,25 +233,4 @@
 
 // commonWord("the tortoise beat the haire","the tortoise lost to the haire")
 
-var singleNumber = function(nums) {
-    if(nums.length <= 1) nums;
-    if(nums.length === 2 && nums[0] == nums[1]) return nums[0];
-
-    let set = new Set();
-    for(let i = 0; i < nums.length; i++) {
-        let curr = nums[i];
-        if(!set.has(curr)){
-            set.add(curr);
-            nums.splice(i, 1)
-        }
-    }
-    // console.log("set: ", set, "nums: ", nums)
-    for(let k = 0; k < nums.length; k++){
-        if(!set.has(nums[k])){
-            return nums[k]
-        }
-    }
-
-};
-
-  console.log(singleNumber([2, 4, 2, 1, 6]))
+My ability to learn and implement things in a short time frame. My skills in JavaScript, Python, SQL, and React/Redux are very solid and are on display in my “Instapaw” project with created CRUD features such as user authentication, follows, comments, likes, search, and posts which connect to Amazon Web Services API . I ask a lot of questions and write any feedback I get down so I can refrain from asking the same question twice.  I'm a hard worker and will do whatever it takes to succeed in my role and help my team as much as possible. I am also very easy-going, a self-starter, great multi-tasker, and awesome communicator which comes from my background as a surgical tech, strategic problem-solver, and love to work with all types of people and have no problem working independently. 

@@ -195,63 +195,24 @@
 // sentence1 = "the tortoise beat the haire", sentence2 = "the tortoise lost to the haire", return ["beat", "to", "lost"]
 // sentence1 = "copper coffee pot", sentence2 = "hot coffee pot", return ["copper", "hot"]
 
-// var longest = (a, b) => {
-//         return a.length > b.length ? a : b;
-//     };
-
-
-// function commonWord(aString, bString) {
-//     if(!aString.length) {
-//         return bString
-//     } else if(!bString.length) {
-//         return aString
-//     }
-//     let a = aString.split(" ")
-//     let b = bString.split(" ")
-//     let maxChars = Math.max(a.length, b.length)
-//     let result = [];
-//     for(let i = 0; i < maxChars.length; i++){
-//         let aWord = a[i];
-//         let bWord = b[i];
-//         // console.log(aWord)
-//         if(b.includes(aWord)){
-//             a.replace(aWord, "");
-//             b.replace(aWord, "");
-//             // console.log(a)
-//         }
-//         if(a.includes(bWord)){
-//             a.replace(bWord, "");
-//             b.replace(bWord, "");
-//             // console.log(b)
-//         }
-//         return a.concat(b)
-//     }
-
-
-//     //iterate up to longest str count, each iter, str1[iter] == str2[iter] ?
-// }
-
-// commonWord("the tortoise beat the haire","the tortoise lost to the haire")
-
-var singleNumber = function(nums) {
-    if(nums.length <= 1) nums;
-    if(nums.length === 2 && nums[0] == nums[1]) return nums[0];
-
-    let set = new Set();
-    for(let i = 0; i < nums.length; i++) {
-        let curr = nums[i];
-        if(!set.has(curr)){
-            set.add(curr);
-            nums.splice(i, 1)
-        }
+var longest = (a, b)=> {
+        return a.length > b.length ? a : b;
     }
-    // console.log("set: ", set, "nums: ", nums)
-    for(let k = 0; k < nums.length; k++){
-        if(!set.has(nums[k])){
-            return nums[k]
-        }
+);
+
+function commonWord(a, b) {
+    if(!a.length) {
+        return b
+    } else if(!b.length) {
+        return a
     }
+    let maxChars = longest(a, b)
+    let result = [];
+    return maxChars
+    // for(let i = 0; i < maxChars.length; i++){
+    //     let letter = maxChars[i];
+    //     if(b.includes())
+    // }
+}
 
-};
-
-  console.log(singleNumber([2, 4, 2, 1, 6]))
+console.log(commonWord("the tortoise beat the haire","the tortoise lost to the haire" ))

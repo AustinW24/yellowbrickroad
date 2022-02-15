@@ -237,21 +237,11 @@ var singleNumber = function(nums) {
     if(nums.length <= 1) nums;
     if(nums.length === 2 && nums[0] == nums[1]) return nums[0];
 
-    let set = new Set();
-    for(let i = 0; i < nums.length; i++) {
-        let curr = nums[i];
-        if(!set.has(curr)){
-            set.add(curr);
-            nums.splice(i, 1)
-        }
-    }
-    // console.log("set: ", set, "nums: ", nums)
-    for(let k = 0; k < nums.length; k++){
-        if(!set.has(nums[k])){
-            return nums[k]
-        }
-    }
+
+    let newNums = nums.splice();
+    console.log()
+
 
 };
 
-  console.log(singleNumber([2, 4, 2, 1, 6]))
+  console.log(singleNumber([2, 1, 2, 1, 5]))

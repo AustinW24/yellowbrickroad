@@ -236,7 +236,11 @@
 var singleNumber = function(nums) {
     if(nums.length <= 1) nums;
     if(nums.length === 2 && nums[0] == nums[1]) return nums[0];
-
+    let res = 0;
+    //iterate through nums
+    //create a set to hold unique nums
+    //if set !have nums[i] ? set.add nums[i] : continue
+    //iterate through set and find which is not in nums
     let set = new Set();
     for(let i = 0; i < nums.length; i++) {
         let curr = nums[i];
@@ -245,13 +249,13 @@ var singleNumber = function(nums) {
             nums.splice(i, 1)
         }
     }
-    // console.log("set: ", set, "nums: ", nums)
-    for(let k = 0; k < nums.length; k++){
-        if(!set.has(nums[k])){
-            return nums[k]
+    set.forEach((number) => {
+        if(!nums.includes(number)){
+            res+=number
         }
-    }
+    })
+    return res;
 
 };
 
-  console.log(singleNumber([2, 4, 2, 1, 6]))
+  console.log(isPrime(6))

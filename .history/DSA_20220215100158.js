@@ -237,6 +237,7 @@ var singleNumber = function(nums) {
     if(nums.length <= 1) nums;
     if(nums.length === 2 && nums[0] == nums[1]) return nums[0];
 
+
     let set = new Set();
     for(let i = 0; i < nums.length; i++) {
         let curr = nums[i];
@@ -251,7 +252,13 @@ var singleNumber = function(nums) {
             return nums[k]
         }
     }
+    // set.forEach((number) => {
+    //     if(!nums.includes(number)){
+    //         console.log(number)
+    //     }
+    // })
+
 
 };
 
-  console.log(singleNumber([2, 4, 2, 1, 6]))
+  console.log(singleNumber([2, 4, 2, 1, 1]))
